@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 body{
-  background: blue;
+  background: rgb(67, 67, 181);
   color: white;
+}
+#con{
+  margin-left: 500px;
+  margin-top: 15vh;
 }

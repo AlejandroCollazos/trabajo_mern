@@ -1,11 +1,13 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
+import { AuthProvider } from './context/AuthContex'
 
 function app(){
   return(
     <>
-      <BrowserRouter>
+    <AuthProvider>
+       <BrowserRouter>
         <Routes>
           <Route path='/'element={<h1>Home page</h1>} />
           <Route path='/login'element={<LoginPage/>} />
@@ -16,6 +18,7 @@ function app(){
           <Route path='/profile'element={<h1>Profile</h1>} />
         </Routes>
       </BrowserRouter>
+    </AuthProvider>
     </>
   )
 }
