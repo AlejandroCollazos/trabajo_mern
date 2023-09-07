@@ -7,12 +7,14 @@ import TaskFormPage from './pages/TaskFormPage'
 import ProfilePage from './pages/ProfilePage'
 import HomePage from './pages/HomePage'
 import ProtectedRoute from './ProtectedRoute'
+import { TaskProvide } from './context/TaskContext'
 
 function app(){
   return(
     <>
     <AuthProvider>
-       <BrowserRouter>
+      <TaskProvide>
+         <BrowserRouter>
         <Routes>
           <Route path='/'element={<HomePage/>} />
           <Route path='/login'element={<LoginPage/>} />
@@ -20,13 +22,13 @@ function app(){
 
           <Route element={<ProtectedRoute/>}>
               <Route path='/tasks'element={<TaskPage/>} />
-              <Route path='/ass-task'element={<TaskFormPage/>} />
+              <Route path='/add-task'element={<TaskFormPage/>} />
               <Route path='/tasks/:is'element={<TaskFormPage/>} />
               <Route path='/profile'element={<ProfilePage/>} />
           </Route>
-
         </Routes>
       </BrowserRouter>
+      </TaskProvide>
     </AuthProvider>
     </>
   )

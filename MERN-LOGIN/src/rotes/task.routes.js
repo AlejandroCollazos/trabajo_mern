@@ -8,9 +8,9 @@ import { validateSchema } from "../middlewares/validator.middlewares.js";
 const router=Router();
 
 router.get('/tasks', requiredAuth, getTasks)
-router.get('/tasks/:id', requiredAuth, getTask)
-router.post('/tasks', requiredAuth, validateSchema(createTaskSchema),createTask)
-router.put('/tasks/:id', requiredAuth, updateTask)
-router.delete('/tasks/:id', requiredAuth, deleteTask)
+router.get('/task/:id', requiredAuth, getTask)
+router.post('/task', requiredAuth, validateSchema(createTaskSchema),createTask)
+router.put('/task/:id', requiredAuth, updateTask)
+router.delete('/task/:id', requiredAuth, deleteTask)
 
 export default router;
